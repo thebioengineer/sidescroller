@@ -4,7 +4,7 @@
 \alias{sidescroller}
 \title{Side Scroller Initializer}
 \usage{
-sidescroller(title = "", author = "", ...)
+sidescroller()
 }
 \arguments{
 \item{title}{define the title of the presentation}
