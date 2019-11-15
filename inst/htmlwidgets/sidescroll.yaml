@@ -1,0 +1,25 @@
+# (uncomment to add a dependency)
+dependencies:
+  - name: sidescroll
+    version: 1.0.0
+    src: htmlwidgets/sidescroll
+    script:
+      - sidescroll.js
+    stylesheet:
+      - sidescroll.css
+  - name: slick
+    version: 1.8.1
+    src: htmlwidgets/slick
+    script:
+      - slick.min.js
+      - sidescroll.js
+    stylesheet:
+      - slick.css
+      - slick-theme.css
+      - sidescroll.css
+  - name: jquery
+    version: 1.11.0
+    src: htmlwidgets/jquery
+    script:
+      - jquery-1.11.0.min.js
+      - jquery-migrate-1.2.1.min.js

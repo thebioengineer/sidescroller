@@ -1,0 +1,12 @@
+body
+{
+    width: 100vw;
+    height: 56.25vw; /* height:width ratio = 9/16 = .5625  */
+    background: pink;
+    max-height: 100vh;
+    max-width: 177.78vh; /* 16/9 = 1.778 */
+    margin: auto;
+    position: absolute;
+    top:0;bottom:0; /* vertical center */
+    left:0;right:0; /* horizontal center */
+}
