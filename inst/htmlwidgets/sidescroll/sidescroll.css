@@ -1,8 +1,8 @@
 body{
     width: 90vw;
     height: 90vh;
-    margin: auto;
-    position: absolute;
+    margin: 0;
+    position: relative;
     top:0;bottom:0; /* vertical center */
     left:0;right:0; /* horizontal center */
     display: table;
@@ -23,10 +23,16 @@ body{
   background: green;
   height: 900px;
   width: 1600px;
-  display: inline-block;  
+  display: flex;
+  justify-content: center;
+  top:0;bottom:0; /* vertical center */
+  left:0;right:0; /* horizontal center */
+  margin: auto;
 }
 
 .slide_master_wrapper{
+  height: 100%;
   display: flex;
   justify-content: center;
+  transform-origin: top;
 }
