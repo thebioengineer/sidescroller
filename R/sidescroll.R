@@ -7,7 +7,7 @@
 #' @import htmltools
 sidescroller<- function(){
 
-  slide_master <- div(class="slide_master")
+  slide_master <- div(class = "slide_master_wrapper",div(class="slide_master"))
 
   slide_master <- htmltools::attachDependencies(
     slide_master, sidescrollDependencies()

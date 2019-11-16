@@ -15,5 +15,8 @@ slide <- function(x, ..., slide_id = "generic", slide_class = "generic", visibil
     )
   )
   
-  tagAppendChild(x,slide_contents)
+  x$children[[length(x$children)]] <- 
+    tagAppendChild(x$children[[length(x$children)]],slide_contents)
+  
+  x
 }
