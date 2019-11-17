@@ -1,6 +1,10 @@
 
 example_scroller <- sidescroller() %>%
-  title_slide("TITLE","Author") %>%
+  title_slide(
+    title = "This is the title of my awesome presentation",
+    subtitle = c("Ellis Hughes","11/17/2019"),
+    text_align = "left"
+    )%>%
   slide(p("Oh Hello, world"), visibility = FALSE) %>%
   slide(tags$ol(
     tags$li("Item 1"),
@@ -22,12 +26,23 @@ example_scroller <- sidescroller() %>%
           ),
         tags$script(type="text/javascript",src="https://tenor.com/embed.js")),
     visibility=FALSE) %>%
-  slide(markdown_to_html("
-        this is a test
+  markdown_slide("
+        ## this is a test
         of the system
         _to generate_
         *html outputs*
-        onthefly"),
-        visibility=FALSE)
+        onthefly",
+        visibility=FALSE) %>%
+  markdown_slide("
+            ## New slide header
+            Testing the markdown
+            1. making
+              - a list
+              - is easy in markdown
+              - but
+            2. will it render??
+
+            Because I like [links](https://www.google.com)!
+            ")
 
 save_sidescroller(example_scroller,"test.html")

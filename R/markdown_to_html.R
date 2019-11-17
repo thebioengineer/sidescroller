@@ -7,7 +7,6 @@
 #' @importFrom htmltools HTML
 #' @export
 markdown_to_html <- function(x){
-
   stopifnot(is.character(x))
 
   temp_md <- tempfile()
@@ -24,10 +23,12 @@ markdown_to_html <- function(x){
     pandoc_output
     stop("Pandoc conversion error")
   }else{
+
     html_content <- read_html(temp_html) %>%
       html_nodes(".main-container>:not(#header)") %>%
       as.character %>%
       paste(collapse="")
+
 
     unlink(temp_md)
     unlink(temp_html)

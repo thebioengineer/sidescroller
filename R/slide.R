@@ -1,5 +1,5 @@
 
-slide <- function(x, ..., slide_id = "generic", slide_class = "generic", visibility = TRUE, background = NULL){
+slide <- function(x, ..., slide_id = "generic", slide_class = "generic", visibility = FALSE, background = NULL){
 
   if(visibility){
     slide_style <- "visibility:visible;"
@@ -24,4 +24,10 @@ slide <- function(x, ..., slide_id = "generic", slide_class = "generic", visibil
     tagAppendChild(x$children[[length(x$children)]],slide_contents)
 
   x
+}
+
+
+markdown_slide <- function(x, content, ... ){
+  print(content)
+  slide(x, markdown_to_html(content), ...)
 }

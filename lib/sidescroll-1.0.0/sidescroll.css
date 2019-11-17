@@ -11,16 +11,18 @@ body{
 
 .slide_container{
   position: relative;
-  padding: 10px 10px;
+  padding: 50px 10px;
   height: 100%;
+  font-size: 25px
 }
+
 
 .slick-slider{
   height: 100%;
 }
 
 .slide_master{
-  background: green;
+  background: white;
   height: 900px;
   width: 1600px;
   display: flex;
@@ -40,3 +42,30 @@ body{
 .slick-list, .slick-track {
   height:100%;
 }
+
+
+
+.title_slide{
+  width: 1600px;
+}
+
+.slide_title_container{
+  margin-top: 100px;
+  width: 98%;
+	text-align: center;
+	display: inline-block;
+	position: absolute;
+	background-color: #112345;
+	color: #fff;
+	word-wrap: break-word;
+}
+
+.title_text  {
+  margin: 2%;
+}
+
+.subtitle_text {
+	margin: 0.5%;
+	margin-left: 2%;
+}
+
