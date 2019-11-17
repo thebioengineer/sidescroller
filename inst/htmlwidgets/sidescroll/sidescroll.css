@@ -1,6 +1,6 @@
 body{
-    width: 90vw;
-    height: 90vh;
+    width: 95vw;
+    height: 95vh;
     margin: 0;
     position: relative;
     top:0;bottom:0; /* vertical center */
@@ -35,4 +35,8 @@ body{
   display: flex;
   justify-content: center;
   transform-origin: top;
+}
+
+.slick-list, .slick-track {
+  height:100%;
 }

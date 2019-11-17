@@ -21,3 +21,7 @@ sidescrollDependencies <- function(){
 
 }
 
+
+save_sidescroller <- function(x,file,background = "#313131", libdir = "lib"){
+  save_html( x, file, background = background, libdir = libdir )
+}
