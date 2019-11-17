@@ -1,14 +1,19 @@
 
-slide <- function(x, ..., slide_id = "generic", slide_class = "generic", visibility = TRUE){
+slide <- function(x, ..., slide_id = "generic", slide_class = "generic", visibility = TRUE, background = NULL){
 
   if(visibility){
-    slidevis <- "visibility:visible"
+    slide_style <- "visibility:visible;"
   }else{
-    slidevis <- "visibility:hidden"
+    slide_style <- "visibility:hidden;"
   }
 
+  if(!is.null(background)){
+    slide_style <- paste0(slide_style," background:", background,";")
+  }
+
+
   slide_contents <- div(
-    div(class="slide_container", style=slidevis,
+    div(class="slide_container", style = slide_style,
         div(class = slide_class,id= slide_id,
             ...
         )
