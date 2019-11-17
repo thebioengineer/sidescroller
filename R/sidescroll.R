@@ -13,6 +13,8 @@ sidescroller<- function(){
     slide_master, sidescrollDependencies()
   )
 
+  class(slide_master)<-c(class(slide_master),"sidescroller")
+
   slide_master
 }
 
