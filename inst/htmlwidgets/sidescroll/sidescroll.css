@@ -45,7 +45,7 @@ body{
 
 
 
-.title_slide{
+.title_slide, .full_width{
   width: 1600px;
 }
 
@@ -68,4 +68,3 @@ body{
 	margin: 0.5%;
 	margin-left: 2%;
 }
-

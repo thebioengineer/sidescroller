@@ -2,20 +2,14 @@
 % Please edit documentation in R/sidescroll.R
 \name{sidescroller}
 \alias{sidescroller}
-\title{Side Scroller Initializer}
+\title{Side Scroller Initializer
+Initialize a Side Scroller}
 \usage{
 sidescroller()
 }
-\arguments{
-\item{title}{define the title of the presentation}
-
-\item{author}{define the auther of the presentation}
-
-\item{...}{HTML tags to add to head}
-}
 \description{
-Side Scroller Initializer
-}
-\details{
 initialize a side scroller object
+}
+\examples{
+x <- sidescroller()
 }

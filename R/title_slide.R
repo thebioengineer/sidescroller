@@ -1,9 +1,19 @@
 #' Create title slide for presentation
 #' @details create a title slide for your presentation
-#' @param x
-
-
+#' @param x a side scoller object
+#' @param title Title of the presentation
+#' @param subtitle a character vector of subtitles to add
+#' @param ... arguments to be passed to \code{\link[sidescroller]{slide_base}}
+#' @param text_align Where should the title and subtitles be aligned? center, left or right.
+#' @export
+#' @examples
+#' sidescroller() %>% 
+#'    title_slide(
+#'      title = "Sidescoller Presentation", 
+#'      subtitle = "By Ellis Hughes")
 title_slide <- function(x, title = NULL, subtitle = NULL, ... , text_align=c("center","left","right")){
+  
+  stopifnot(is_sidescroller(x))
 
   text_align <- match.arg(text_align)
 
@@ -24,6 +34,5 @@ title_slide <- function(x, title = NULL, subtitle = NULL, ... , text_align=c("ce
     }
   }
 
-  slide(x, slide_title , ... , slide_class = c("title_slide"))
-
+  slide_base(x, slide_title , ... , slide_class = c("title_slide", "generic"), visibility = TRUE)
 }

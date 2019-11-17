@@ -1,10 +1,11 @@
 
 #' @title Side Scroller Initializer
-#' @details initialize a side scroller object
-#' @param title define the title of the presentation
-#' @param author define the auther of the presentation
-#' @param ... HTML tags to add to head
+#' Initialize a Side Scroller
+#' @description  initialize a side scroller object
 #' @import htmltools
+#' @export
+#' @examples
+#' x <- sidescroller()
 sidescroller<- function(){
 
   slide_master <- div(class = "slide_master_wrapper",div(class="slide_master"))
@@ -19,7 +20,15 @@ sidescroller<- function(){
 }
 
 
-
+#' Check if is a side scroller object
+#' @param x object to be checked if it is a side scroller
+#' @export
+#' @examples
+#' x <- sidescroller()
+#' is_sidescroller(x)
+is_sidescroller <- function(x){
+  "sidescroller" %in% class(x)
+}
 
 
 

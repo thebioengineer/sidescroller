@@ -16,7 +16,7 @@
   <div class="slide_master">
     <div>
       <div class="slide_container" style="visibility:visible;">
-        <div class="title_slide" id="generic">
+        <div class="title_slide generic" id="generic">
           <div class="slide_title_container" style="text-align:left;">
             <h1 class="title_text" style="z-index:1000;">This is the title of my awesome presentation</h1>
             <p class="subtitle_text">Ellis Hughes</p>
@@ -33,8 +33,9 @@
       </div>
     </div>
     <div>
-      <div class="slide_container" style="visibility:hidden;">
+      <div class="slide_container" style="visibility:visible;">
         <div class="generic" id="generic">
+          <p>This slide is by default visible due to `visibility = TRUE`</p>
           <ol>
             <li>Item 1</li>
             <li>item 2</li>
@@ -45,31 +46,28 @@
     <div>
       <div class="slide_container" style="visibility:hidden;">
         <div class="generic" id="generic">
-          <div style="width:200px">
-            <div class="tenor-gif-embed" data-postid="13983336" data-share-method="host" data-width="100%" data-aspect-ratio="1.3555555555555556">
-              <a href="https://tenor.com/view/zoidberg-dr-futurama-lila-thats-why-we-love-you-gif-13983336">Zoidberg Dr GIF</a>
-              from
-              <a href="https://tenor.com/search/zoidberg-gifs">Zoidberg GIFs</a>
+          <img src="https://66.media.tumblr.com/ee3deb2caceaa59c3dd0f80f82a37beb/tumblr_mpsej2j5rW1qz8x31o1_500.gifv"/>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="slide_container" style="visibility:hidden; background:gray;">
+        <div class="full_width generic" id="generic">
+          <div>
+            <div class="slide_title">
+              <h1>This is a wide slide</h1>
             </div>
-            <script type="text/javascript" src="https://tenor.com/embed.js"></script>
           </div>
+          <p>This slide will fill the width of the display</p>
+          <p>The purpose could be to clear out the past display, or stage before the next section.</p>
+          <p>To clarify the area of the slide, it is colored `gray`.</p>
         </div>
       </div>
     </div>
     <div>
       <div class="slide_container" style="visibility:hidden;">
-        <div class="generic" id="generic"><div id="this-is-a-test" class="section level2">
-<h2>this is a test</h2>
-<p>of the system</p>
-<p><em>to generate</em></p>
-<p><em>html outputs</em></p>
-<p>onthefly</p>
-</div></div>
-      </div>
-    </div>
-    <div>
-      <div class="slide_container" style="visibility:visible;">
-        <div class="generic" id="generic"><div id="new-slide-header" class="section level2">
+        <div class="generic" id="generic">
+          <div><div id="new-slide-header" class="section level2">
 <h2>New slide header</h2>
 <p>Testing the markdown</p>
 <ol style="list-style-type: decimal">
@@ -85,6 +83,7 @@
 </ol>
 <p>Because I like <a href="https://www.google.com">links</a>!</p>
 </div></div>
+        </div>
       </div>
     </div>
   </div>

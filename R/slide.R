@@ -1,6 +1,22 @@
 
-slide <- function(x, ..., slide_id = "generic", slide_class = "generic", visibility = FALSE, background = NULL){
+#' Generic Slide Creation
+#' @description helper function for creating slides. Intended for use within other functions
+#' @param x a sidescroller object
+#' @param ... tag elements to be added to the slide
+#' @param background What color should the background of the slide be
+#' @param visibility Should the slide default to be visible before sliding over. Defaults to false
+#' @param slide_id set the css slide id
+#' @param slide_class set the css slide class
+#' @export
+#' @examples 
+#' x <- sidescroller() %>% 
+#'     slide_base(h1("This is a new slide),br(),p("This is some slide contents"), background = "#111111")
+#' 
 
+slide_base <- function(x, ..., background = NULL, visibility = FALSE, slide_id = "generic", slide_class = "generic"){
+
+  stopifnot(is_sidescroller(x))
+  
   if(visibility){
     slide_style <- "visibility:visible;"
   }else{
@@ -14,7 +30,7 @@ slide <- function(x, ..., slide_id = "generic", slide_class = "generic", visibil
 
   slide_contents <- div(
     div(class="slide_container", style = slide_style,
-        div(class = slide_class,id= slide_id,
+        div(class = paste(slide_class, collapse = " ") ,id= paste(slide_id, collapse = " "),
             ...
         )
     )
@@ -26,8 +42,3 @@ slide <- function(x, ..., slide_id = "generic", slide_class = "generic", visibil
   x
 }
 
-
-markdown_slide <- function(x, content, ... ){
-  print(content)
-  slide(x, markdown_to_html(content), ...)
-}

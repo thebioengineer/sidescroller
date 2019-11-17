@@ -1,15 +1,22 @@
-Package: sidescroll
+Package: sidescroller
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Generate Sidescroller Presentations
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Author: Ellis Hughes
+Maintainer: Ellis Hughes <ellishughes@live.com>
+Description: Generate side-scrolling presentations through R using this package. It provides utilities
+    for using tags or markdown.
+License: MIT
+URL: https://github.com/thebioengineer/sidescroller
+BugReports: https://github.com/thebioengineer/sidescroller/issues
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.1
 Imports: 
-    magrittr
+    magrittr,
+    htmltools,
+    rmarkdown,
+    xml2,
+    rvest
+    
