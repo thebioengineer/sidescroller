@@ -69,3 +69,7 @@ save_sidescroller(example_scroller,"example_scroller.html")
 
 ```
 
+The resulting presention looks like this:
+
+![gif of sample presentation](inst/sample/side_scroller_example_screen_capture.gif)
+

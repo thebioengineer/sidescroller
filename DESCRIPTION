@@ -6,7 +6,7 @@ Author: Ellis Hughes
 Maintainer: Ellis Hughes <ellishughes@live.com>
 Description: Generate side-scrolling presentations through R using this package. It provides utilities
     for using tags or markdown.
-License: MIT
+License: MIT + file LICENSE
 URL: https://github.com/thebioengineer/sidescroller
 BugReports: https://github.com/thebioengineer/sidescroller/issues
 Encoding: UTF-8
@@ -19,4 +19,3 @@ Imports:
     rmarkdown,
     xml2,
     rvest
-    
