@@ -1,4 +1,4 @@
-# sidescroll
+# sidescroller
 
 <!-- badges: start -->
 <!-- badges: end -->
@@ -11,7 +11,7 @@ You can install the released version of sidescroll from [github](https://www.git
 
 ``` r
 #install.packages("devtools")
-devtools::install_github("thebioengineer/sidescroll")
+devtools::install_github("thebioengineer/sidescroller")
 ```
 
 ## Example

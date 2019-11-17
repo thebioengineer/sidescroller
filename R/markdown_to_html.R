@@ -50,12 +50,3 @@ left_justify <- function(x){
   left_whitespace  <- gsub("(\\s*)(.*)","\\1",first)
   gsub(left_whitespace,"",x)
 }
-
-
-markdown_to_html(
-"this is a test
-of the system
-_to generate_
-*html outputs*
-onthefly
-")

@@ -3,6 +3,7 @@
 export("%>%")
 export(is_sidescroller)
 export(markdown_to_html)
+export(save_sidescroller)
 export(sidescroller)
 export(slide_base)
 export(slide_markdown)

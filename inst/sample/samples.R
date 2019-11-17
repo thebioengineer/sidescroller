@@ -1,3 +1,5 @@
+library(sidescroller)
+
 example_scroller <- sidescroller() %>%
   title_slide(
     title = "This is the title of my awesome presentation",
