@@ -42,14 +42,7 @@ example_scroller <- sidescroller() %>%
        title = "This is a wide slide",
        p("This slide will fill the width of the display"),
        p("The purpose could be to clear out the past display, or stage before the next section")
-       ) %>% 
-  markdown_slide("
-        ## this is a test
-        of the system
-        _to generate_
-        *html outputs*
-        onthefly",
-        visibility=FALSE) %>%
+       ) %>%
   markdown_slide("
             ## New slide header
             Testing the markdown
