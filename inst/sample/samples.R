@@ -5,8 +5,8 @@ example_scroller <- sidescroller() %>%
   slide(tags$ol(
     tags$li("Item 1"),
     tags$li("item 2")
-    ), 
-    visibility = FALSE) %>% 
+    ),
+    visibility = FALSE) %>%
   slide(
     div(style = "width:200px",
     div(class="tenor-gif-embed",
@@ -21,6 +21,13 @@ example_scroller <- sidescroller() %>%
                "Zoidberg GIFs")
           ),
         tags$script(type="text/javascript",src="https://tenor.com/embed.js")),
-    visibility=FALSE)
+    visibility=FALSE) %>%
+  slide(markdown_to_html("
+        this is a test
+        of the system
+        _to generate_
+        *html outputs*
+        onthefly"),
+        visibility=FALSE)
 
-save_html(example_scroller,"test.html")
+save_sidescroller(example_scroller,"test.html")
