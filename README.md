@@ -73,3 +73,6 @@ The resulting presention looks like this:
 
 ![gif of sample presentation](inst/sample/side_scroller_example_screen_capture.gif)
 
+Please note that the 'sidescroller' project is released with a
+[Contributor Code of Conduct](CODE_OF_CONDUCT.md).
+By contributing to this project, you agree to abide by its terms.
