@@ -26,7 +26,9 @@ example_scroller <- sidescroller() %>%
     p("To clarify the area of the slide, it is colored `gray`."),
     background = "gray"
   ) %>% 
-  slide_markdown("
+  slide_markdown(
+    title = "Markdown Slide",
+    "
      ## New slide header
      Testing the markdown
      1. making
@@ -36,6 +38,26 @@ example_scroller <- sidescroller() %>%
      2. will it render??
      
      Because I like [links](https://www.google.com)!"
-     )
+     ) %>% 
+  slide_multipanel(
+    title = "Multi-Panel Slide",
+    panel(p("Contents 1")),
+    panel(img(src = "https://imgs.xkcd.com/comics/frequentists_vs_bayesians.png")),
+    panel(markdown_to_html(
+      "
+      markdown_to_html() also works here
+      Isn't that *cool*?
+      - This enables you to:
+          - make a point
+      - and progress through the
+          - story to maintaing continuity
+      "
+    ))
+  )
 
-save_sidescroller(example_scroller,"example_scroller.html")
+temp_html <- tempfile(fileext = ".html")
+
+save_sidescroller(example_scroller,temp_html)
+rstudioapi::viewer(temp_html)
+
+

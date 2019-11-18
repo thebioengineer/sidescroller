@@ -11,9 +11,13 @@ body{
 
 .slide_container{
   position: relative;
-  padding: 50px 10px;
-  height: 100%;
+  padding: 50px 30px;
+  height: 90%;
   font-size: 25px
+}
+
+.slide_container img {
+  max-height: 700px;
 }
 
 
@@ -49,6 +53,10 @@ body{
   width: 1600px;
 }
 
+.full_width{
+  padding-left: 30px;
+}
+
 .slide_title_container{
   margin-top: 100px;
   width: 98%;
@@ -68,3 +76,16 @@ body{
 	margin: 0.5%;
 	margin-left: 2%;
 }
+
+.multi_panel {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.panel{
+  height:85%
+}
+
+
