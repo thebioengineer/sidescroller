@@ -87,22 +87,32 @@ censu dat quid dixerat fera. Oraque exul.
     title = "Multi-Panel Slide with a title that goes on and on my fiends. It is a title that never ends. On and on it goes. where it stops, who knows?",
     panel(
       p("Contents 1"),
-      img(src= "https://upload.wikimedia.org/wikipedia/commons/5/58/Fun._band.jpg")
+      markdown_to_html(
+        "
+        Table for two
+        -------------
+        <table>
+        <tr>
+        <th>ID</th><th>Name</th><th>Rank</th>
+        </tr>
+        <tr>
+        <td>1</td><td>Tom Preston-Werner</td><td>Awesome</td>
+        </tr>
+        <tr>
+        <td>2</td><td>Albert Einstein</td><td>Nearly as awesome</td>
+        </tr>
+        </table>
+        "
+      )
     ),
-    panel(img(src = "https://imgs.xkcd.com/comics/frequentists_vs_bayesians.png")),
+    panel(img(src = "https://devopedia.org/images/article/172/7316.1561043304.png")),
     panel_markdown(
-      "markdown_to_html() also works here
-      Isn't that *cool*?
-      - This enables you to:
-          - make a point
-      - and progress through the
-          - story to maintaing continuity
-
-      ```{r}
-      print(\"Hello World\")
-      ```"
+      "Math is hard, let's go shopping
+       -------------------------------
+       In first grade I learned that 5 > 3 and 2 < 7. Maybe some arrows. 1 -> 2 -> 3. 9 <- 8 <- 7.
+       Triangles man! a^2 + b^2 = c^2"
     ),
-    style = "background: light-blue;",
+    style = "background: coral;",
     panel_style = "margin-top: 100px;"
   )
 

@@ -108,6 +108,7 @@ h1, h2, h3, h4, h5, h6, h7 {
 
 .multi_panel_title_box {
   width: max-content;
+  z-index: 2000;
 }
 
 
