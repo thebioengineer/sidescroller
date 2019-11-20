@@ -118,7 +118,7 @@ slide_wide_markdown <- function(.x, title = NULL, x, style = NULL){
     )
   }
   
-  slide_base(.x, slide_title, panel(x), slide_class = c("full_width", "single_panel", "generic"), style = style)
+  slide_base(.x, slide_title, panel(markdown_to_html(x)), slide_class = c("full_width", "single_panel", "generic"), style = style)
 }
 
 #' Slide made up of multiple panels

@@ -1,18 +1,18 @@
 library(sidescroller)
 
 example_scroller <- sidescroller() %>%
-  
+
   title_slide(
     title = "This is the title of my awesome presentation",
     subtitle = c("Ellis Hughes","11/17/2019"),
     text_align = "left"
   )%>%
-  
+
   slide(
     title = NULL,
     p("Oh Hello, world")
     ) %>%
-  
+
   slide(
     "A now Visible Slide",
     tags$ol(
@@ -20,20 +20,20 @@ example_scroller <- sidescroller() %>%
       tags$li("item 2")
     )
     ) %>%
-  
+
   slide(
     title = "Example of an image",
     img(src="https://66.media.tumblr.com/ee3deb2caceaa59c3dd0f80f82a37beb/tumblr_mpsej2j5rW1qz8x31o1_500.gifv")
   ) %>%
-  
+
   slide_wide(
     title = "This is a wide slide",
     p("This slide will fill the width of the display"),
     p("The purpose could be to clear out the past display, or stage before the next section."),
     p("To clarify the area of the slide, it is colored `gray`."),
     style = "background: gray;"
-  ) %>% 
-  
+  ) %>%
+
   slide_markdown(
     title = "Markdown Slide",
     "Testing the markdown
@@ -42,10 +42,10 @@ example_scroller <- sidescroller() %>%
          - is easy in markdown
          - but
      2. will it render??
-     
+
      Because I like [links](https://www.google.com)!"
-     ) %>% 
-  
+     ) %>%
+
   slide_multipanel(
     title = "Multi-Panel Slide",
     panel(
@@ -65,7 +65,7 @@ example_scroller <- sidescroller() %>%
       print(\"Hello World\")
       ```"
     )
-  ) %>% 
+  ) %>%
   slide_markdown(
     title = "Super long title. like how is it soooo long. holy cow. when will it loop back??",
     "Lorem markdownum credas posset illa solvit, circumspice funesta fixa iacebat
@@ -81,9 +81,9 @@ censu dat quid dixerat fera. Oraque exul.
 4. Erit natus circumlita contigit incertas via oras
 5. Canori me tonitrus dabat rastrique inque nox
 6. Frena spoliata dubitaret similis hostem frustraque non"
-  ) %>% 
-  
-  slide_multipanel( 
+  ) %>%
+
+  slide_multipanel(
     title = "Multi-Panel Slide with a title that goes on and on my fiends. It is a title that never ends. On and on it goes. where it stops, who knows?",
     panel(
       p("Contents 1"),
@@ -113,7 +113,7 @@ censu dat quid dixerat fera. Oraque exul.
        Triangles man! a^2 + b^2 = c^2"
     ),
     style = "background: coral;",
-    panel_style = "margin-top: 100px;"
+    panel_style = "margin-top: 120px;"
   )
 
 temp_html <- tempfile(fileext = ".html")

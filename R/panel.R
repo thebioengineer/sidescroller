@@ -17,8 +17,7 @@ panel <- function(..., style = NULL){
 #' @param style panel css styling
 #' @export
 panel_markdown <- function(x, style = NULL){
-  panel_div <- div( class = "panel" , style = style)
-  panel_div <- tagAppendChildren(panel_div, markdown_to_html(x))
+  panel_div <- div( class = "panel" , style = style, markdown_to_html(x))
   class(panel_div) <- c(class(panel_div),"panel")
   return(panel_div)
 }

@@ -13,7 +13,7 @@ markdown_to_html <- function(x){
   temp_html <- tempfile(fileext = ".html")
   content <- left_justify(strsplit(x,"\\n")[[1]])
 
-  writeLines(content,temp_md, sep = "\n\n")
+  writeLines(content,temp_md, sep = "\n")
 
   quiet <- capture.output( pandoc_output <- try( suppressMessages(
     rmarkdown::render(temp_md,temp_html,output_format = rmarkdown::html_document())
@@ -28,7 +28,6 @@ markdown_to_html <- function(x){
       html_nodes(".main-container>:not(#header)") %>%
       as.character %>%
       paste(collapse="")
-
 
     unlink(temp_md)
     unlink(temp_html)
@@ -47,7 +46,7 @@ left_justify <- function(text){
         }
       }
   }
-  
+
   if(nchar(left_whitespace)>0){
     gsub(paste0("^",left_whitespace),"",text,perl=TRUE)
   }else{

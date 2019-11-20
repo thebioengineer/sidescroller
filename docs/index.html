@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<style>body{background-color:#313131;}</style>
+<script src="lib/jquery-1.11.0/jquery-1.11.0.min.js"></script>
+<script src="lib/jquery-1.11.0/jquery-migrate-1.2.1.min.js"></script>
+<link href="lib/sidescroll-1.0.0/sidescroll.css" rel="stylesheet" />
+<script src="lib/sidescroll-1.0.0/sidescroll.js"></script>
+<link href="lib/slick-1.8.1/slick.css" rel="stylesheet" />
+<link href="lib/slick-1.8.1/slick-theme.css" rel="stylesheet" />
+<script src="lib/slick-1.8.1/slick.min.js"></script>
+
+</head>
+<body>
+<div class="slide_master_wrapper">
+  <div class="slide_master">
+    <div>
+      <div class="slide_container fit_content" style="visibility:visible;width:1600px">
+        <div class="title_slide generic" id="generic">
+          <div class="slide_title_container" style="text-align:center;">
+            <h1 class="title_text" style="z-index:1000;">sidescroller</h1>
+            <p class="subtitle_text">Tell the Story</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="slide_container fit_content" style="visibility:hidden;width:1000px">
+        <div class="single_panel generic" id="generic">
+          <div class="single_panel_title_box title_box">
+            <div class="slide_title">
+              <h1>Introduction to {sidescroller}</h1>
+            </div>
+          </div>
+          <div class="panel"><p>sidescroller comes from the idea that presentations are meant to be stories.</p><p>Most presentation tools that exist are now a crutch that allows the user to throw up some text and images on a slide with no connection to the flow of the story.</p><p>By assembling your presentation as a series of connected panels you are able to create a rich story.</p><p>To get started, begin by installing {sidescroller} from github:</p><pre class="r"><code># install.packages("remotes")
+remotes::install_github("thebioengineer/sidescroller")</code></pre></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="slide_container fit_content" style="visibility:hidden;">
+        <div class="single_panel generic" id="generic">
+          <div class="single_panel_title_box title_box">
+            <div class="slide_title">
+              <h1>Starting your {sidescroller}</h1>
+            </div>
+          </div>
+          <div class="panel"><p>After installing {sidescroller}, open a new r script file to begin, and load the namespace.</p><pre class="r"><code>library(sidescroller)
+</code></pre><p>The first Step to creating a presentation is to use <code>sidescroller()</code> and assign it to an object.</p><pre class="r"><code>pres &lt;- sidescroller()</code></pre></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="slide_container" style="visibility:hidden;background-color: #d7d8d2;">
+        <div class="multi_panel generic" id="generic">
+          <div class="multi_panel_title_box title_box">
+            <div class="slide_title">
+              <h1>Slides in sidescroller</h1>
+            </div>
+          </div>
+          <div class="panel" style="width: 600px"><ul>
+<li><p>To build up your presentation, use the family of <em>slide</em> functions that come natively built into the package.</p></li>
+<li>
+<p>The list of available functions for creating your slides are as follow:</p>
+<ul>
+<li>slide</li>
+<li>title_slide</li>
+<li>slide_markdown</li>
+<li>slide_wide</li>
+<li>slide_wide_markdown</li>
+<li>slide_multipanel</li>
+</ul>
+</li>
+<li><p>The <code>slide_*</code> functions are wrappers around the <code>slide()</code> function that are opinionated and designed to facilitate the generation of presentations with the least friction.</p></li>
+<li><p>For example, the slides we are currently going through are an example of using <code>slide_multipanel()</code>.</p></li>
+</ul></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="slide_container" style="visibility:hidden;background-color: #d7d8d2;">
+        <div class="multi_panel generic" id="generic">
+          <div class="panel" style="width: 600px"><div id="title_slide" class="section level3">
+<h3>title_slide</h3>
+<ul>
+<li><p><code>title_slide()</code> is for creating the title slide of the presentation, or for separating and creating ‘chapters’ in the slides.</p></li>
+<li><p>These slides are the full width of the presentation window.</p></li>
+<li><p>There can be a number of subtitles passed through the <code>subtitle</code> argument, each subtitle is an entry in a character vector.</p></li>
+</ul>
+</div></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="slide_container" style="visibility:hidden;background-color: #d7d8d2;">
+        <div class="multi_panel generic" id="generic">
+          <div class="panel" style="width: 600px"><div id="slide-and-slide_markdown" class="section level3">
+<h3>slide and slide_markdown</h3>
+<ul>
+<li>
+<code>slide()</code> is the least opinionated function to use when generating a slide.
+<ul>
+<li>Slide contents are provided as html tags.</li>
+<li>
+<code>htmltools</code> package is loaded to the namespace to provide the necessary tools for creating the html from within an R script.</li>
+</ul>
+</li>
+<li>
+<code>slide_markdown()</code> is for creating the slide contents by writing in markdown to get around needing to have knowledge of html.
+<ul>
+<li>Since most <code>R</code> users are comfortable writing markdown from the <code>rmarkdown</code> and <code>xaringan</code> packages, this is a natural way to make slide creation.</li>
+<li>Keep in mind that the contents are expected as markdown, not RMS and thus will not render supplied code.</li>
+</ul>
+</li>
+</ul>
+</div></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="slide_container" style="visibility:hidden;background-color: #d7d8d2;">
+        <div class="multi_panel generic" id="generic">
+          <div class="panel" style="width: 600px"><div id="slide_wide-and-slide_wide_markdown" class="section level3">
+<h3>slide_wide and slide_wide_markdown</h3>
+<ul>
+<li><p><code>slide_wide()</code> and <code>slide_wide_markdown()</code> are for creating slides that are the full width of the presentation window.</p></li>
+<li><p>This is <em>MOST</em> similar to the current presentation format that most other slide presentations take.</p></li>
+<li><p>Similarly to <code>slide()</code> and <code>slide_markdown()</code>, the <code>slide_wide()</code> function uses html tags to create content, and <code>slide_wide_markdown()</code> uses markdown.</p></li>
+</ul>
+</div></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="slide_container" style="visibility:hidden;background-color: #d7d8d2;">
+        <div class="multi_panel generic" id="generic">
+          <div class="panel" style="width: 600px"><div id="slide_multipanel" class="section level3">
+<h3>slide_multipanel</h3>
+<ul>
+<li><p><code>slide_multipanel()</code> is the most unique aspect of {slidescroller}, in that it can have progressive contents.</p></li>
+<li><p>The contents of this slide is built from either <code>panel()</code> or <code>panel_markdown()</code> functions.</p></li>
+<li><p>They help simulate the idea of stories by having a single title for a series of panels that progressively appear.</p></li>
+<li><p>Like the other variants of functions, <code>panel()</code> accepts html tags, and <code>panel_markdown()</code> uses markdown syntax to generate content.</p></li>
+</ul>
+</div></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="slide_container" style="visibility:hidden;">
+        <div class="multi_panel generic" id="generic">
+          <div class="multi_panel_title_box title_box">
+            <div class="slide_title">
+              <h1>Making the Presentation with {sidescroller}</h1>
+            </div>
+          </div>
+          <div class="panel" style="width: 600px"><p>Each of the <code>slide</code> functions first argument is the object generated by the <code>sidescroller()</code> function. This tells {sidescroller} to append the slide onto the presentation, so order matters. The output of each <code>slide</code> function is then an updated <code>sidescroller</code> object with the new slide.</p><p>Using base R, you could then follow the pattern:</p><pre class="r"><code>pres &lt;- sidescroller()
+pres &lt;- title_slide(pres,title = "Presentation Title",subtitle = "Amazing Subtitle")
+pres &lt;- slide_markdown(pres,title = "Slide 1", content = "Slide Content")</code></pre></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="slide_container" style="visibility:hidden;">
+        <div class="multi_panel generic" id="generic">
+          <div class="panel" style="width: 700px"><p>However, {sidescroller} has the <code>magrittr</code> pipe function exported, so we can simpify the process:</p><pre class="r"><code>pres &lt;- sidescroller() %&gt;%
+           title_slide(pres,
+               title = "Presentation Title",
+               subtitle = "Amazing Subtitle") %&gt;%
+           slide_markdown(pres,
+               title = "Slide 1",
+               content = "Slide Content")</code></pre></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="slide_container fit_content" style="visibility:hidden;background-color: #d7d8d2;">
+        <div class="single_panel generic" id="generic">
+          <div class="single_panel_title_box title_box">
+            <div class="slide_title">
+              <h1>Saving the presentation</h1>
+            </div>
+          </div>
+          <div class="panel"><p>In order to save the presenation, use <code>save_sidescroller()</code>, which is a wrapper around <code>save_html()</code> from <code>htmltools</code>.</p><pre class="r"><code>save_sidescroller(pres,"my_presentation.html")
+</code></pre></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="slide_container fit_content" style="visibility:hidden;">
+        <div class="full_width single_panel generic" id="generic">
+          <div class="single_panel_title_box title_box">
+            <div class="slide_title">
+              <h1>Secret Sauce</h1>
+            </div>
+          </div>
+          <div class="panel"><p>The power of {sidescroller} comes from <a href="http://kenwheeler.github.io/slick">slick.js</a> by <a href="https://kenwheeler.github.io">Ken Wheeler</a> combined with some custom jquery and css code.</p><p>Many thanks to Ken for developing the image carousel library and making it so flexible.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
