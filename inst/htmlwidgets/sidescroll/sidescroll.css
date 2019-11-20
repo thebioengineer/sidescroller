@@ -104,6 +104,7 @@ h1, h2, h3, h4, h5, h6, h7 {
 
 .single_panel_title_box h1{
     margin-top: -15px;
+    max-width: 1200px;
 }
 
 .multi_panel_title_box {
