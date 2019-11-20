@@ -4,7 +4,7 @@
 \alias{slide_wide}
 \title{Slide made to fill entire screen}
 \usage{
-slide_wide(.x, title = NULL, ...)
+slide_wide(.x, title = NULL, ..., style = NULL)
 }
 \arguments{
 \item{.x}{a side scroller object}
@@ -12,6 +12,8 @@ slide_wide(.x, title = NULL, ...)
 \item{title}{title of the slide}
 
 \item{...}{slide contents}
+
+\item{style}{style to be passed to the slide container}
 }
 \description{
 Make a full width slide

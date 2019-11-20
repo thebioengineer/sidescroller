@@ -4,7 +4,7 @@
 \alias{slide}
 \title{Basic Slide with title and contents}
 \usage{
-slide(.x, title = NULL, ...)
+slide(.x, title = NULL, ..., style = NULL)
 }
 \arguments{
 \item{.x}{a sidescoller object}
@@ -12,6 +12,8 @@ slide(.x, title = NULL, ...)
 \item{title}{pass a title for the slide}
 
 \item{...}{html content to create slide}
+
+\item{style}{style to be passed to the slide container}
 }
 \description{
 basic slide with title and contents

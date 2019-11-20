@@ -4,7 +4,7 @@
 \alias{slide_wide_markdown}
 \title{Slide made to fill entire screen}
 \usage{
-slide_wide_markdown(.x, title = NULL, x)
+slide_wide_markdown(.x, title = NULL, x, style = NULL)
 }
 \arguments{
 \item{.x}{a side scroller object}
@@ -12,6 +12,8 @@ slide_wide_markdown(.x, title = NULL, x)
 \item{title}{title of the slide}
 
 \item{x}{slide contents written in markdown}
+
+\item{style}{style to be passed to the slide container}
 }
 \description{
 Make a full width slide

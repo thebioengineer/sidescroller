@@ -4,7 +4,8 @@
 \alias{slide_multipanel}
 \title{Slide made up of multiple panels}
 \usage{
-slide_multipanel(.x, title = NULL, ...)
+slide_multipanel(.x, title = NULL, ..., style = NULL,
+  panel_style = NULL)
 }
 \arguments{
 \item{.x}{a side scroller object}
@@ -12,6 +13,10 @@ slide_multipanel(.x, title = NULL, ...)
 \item{title}{title of the slide}
 
 \item{...}{panels of slide contents}
+
+\item{style}{style to be passed to the slide container}
+
+\item{panel_style}{style to be passed to the panels within the slide}
 }
 \description{
 A slide that is built of multiple panels to progess a story under a single title

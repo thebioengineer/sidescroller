@@ -4,10 +4,12 @@
 \alias{panel}
 \title{Contain the contents of a panel}
 \usage{
-panel(...)
+panel(..., style = NULL)
 }
 \arguments{
 \item{...}{contents of the panel}
+
+\item{style}{panel css styling}
 }
 \description{
 helper function for providing contents for multi-panel slides

@@ -4,7 +4,7 @@
 \alias{slide_markdown}
 \title{Slide based on Markdown text}
 \usage{
-slide_markdown(.x, title = NULL, content, ...)
+slide_markdown(.x, title = NULL, content, ..., style = NULL)
 }
 \arguments{
 \item{.x}{a sidescoller object}
@@ -14,6 +14,8 @@ slide_markdown(.x, title = NULL, content, ...)
 \item{content}{a scalar character vector with contents formatted as markdown}
 
 \item{...}{arguments to be passed to \code{\link[sidescroller]{slide_base}}}
+
+\item{style}{style to be passed to the slide container}
 }
 \description{
 create slide contents based on markdown

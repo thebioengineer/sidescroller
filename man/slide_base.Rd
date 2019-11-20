@@ -4,21 +4,24 @@
 \alias{slide_base}
 \title{Generic Slide Creation}
 \usage{
-slide_base(x, ..., background = NULL, visibility = FALSE,
-  slide_id = "generic", slide_class = "generic")
+slide_base(x, ..., style = NULL, visibility = FALSE,
+  slide_id = "generic", slide_class = "generic",
+  container_class = "fit_content")
 }
 \arguments{
 \item{x}{a sidescroller object}
 
 \item{...}{tag elements to be added to the slide}
 
-\item{background}{What color should the background of the slide be}
+\item{style}{style to be passed to the slide}
 
 \item{visibility}{Should the slide default to be visible before sliding over. Defaults to false}
 
-\item{slide_id}{set the css slide id}
+\item{slide_id}{set the slide id for css}
 
-\item{slide_class}{set the css slide class}
+\item{slide_class}{set the slide class for css}
+
+\item{container_class}{set the class slide container class for css}
 }
 \description{
 helper function for creating slides. Intended for use within other functions

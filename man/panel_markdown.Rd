@@ -4,10 +4,12 @@
 \alias{panel_markdown}
 \title{Contain the contents of a panel written in markdown}
 \usage{
-panel_markdown(x)
+panel_markdown(x, style = NULL)
 }
 \arguments{
 \item{x}{character vector of contents written in markdown}
+
+\item{style}{panel css styling}
 }
 \description{
 helper function for providing contents for multi-panel slides, with the contents written in markdown
