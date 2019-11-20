@@ -9,13 +9,13 @@
 markdown_to_html <- function(x){
   stopifnot(is.character(x))
 
-  temp_md <- tempfile()
+  temp_md <- tempfile(fileext = ".md")
   temp_html <- tempfile(fileext = ".html")
   content <- left_justify(strsplit(x,"\\n")[[1]])
 
   writeLines(content,temp_md, sep = "\n\n")
 
-  quiet <- capture.output(pandoc_output <-  try( suppressMessages(
+  quiet <- capture.output( pandoc_output <- try( suppressMessages(
     rmarkdown::render(temp_md,temp_html,output_format = rmarkdown::html_document())
     ), silent=TRUE))
 
@@ -37,16 +37,20 @@ markdown_to_html <- function(x){
   }
 }
 
-left_justify <- function(x){
-  first <- x[1]
-  if(nchar(first)==0){
-    iter <- 2
-    while(nchar(first)==0){
-      first <- x[iter]
-      iter <- iter + 1
-    }
+left_justify <- function(text){
+  left_whitespace <- NA
+  for(line in text[-1]){
+      if(line != ""){
+        ws<- gsub("^(\\s*)(.*)","\\1",line)
+        if(is.na(left_whitespace) | nchar(ws) < nchar(left_whitespace)){
+          left_whitespace <- ws
+        }
+      }
   }
-
-  left_whitespace  <- gsub("(\\s*)(.*)","\\1",first)
-  gsub(left_whitespace,"",x)
+  
+  if(nchar(left_whitespace)>0){
+    gsub(paste0("^",left_whitespace),"",text,perl=TRUE)
+  }else{
+    text
+  }
 }

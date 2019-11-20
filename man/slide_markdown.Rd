@@ -4,14 +4,14 @@
 \alias{slide_markdown}
 \title{Slide based on Markdown text}
 \usage{
-slide_markdown(x, content, title = NULL, ...)
+slide_markdown(.x, title = NULL, content, ...)
 }
 \arguments{
-\item{x}{a sidescoller object}
-
-\item{content}{a scalar character vector with contents formatted as markdown}
+\item{.x}{a sidescoller object}
 
 \item{title}{pass a title for the slide}
+
+\item{content}{a scalar character vector with contents formatted as markdown}
 
 \item{...}{arguments to be passed to \code{\link[sidescroller]{slide_base}}}
 }

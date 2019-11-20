@@ -61,7 +61,6 @@ $(document).ready(function(){
 
 
 	$('.slide_master').on('afterChange', function(event, slick, currentSlide, nextSlide){
-    console.log("Viz Me!");
     var slide = $(".slick-current").find(".slide_container");
     slide.css('visibility','visible');
   });
