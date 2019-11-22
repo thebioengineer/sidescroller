@@ -60,7 +60,9 @@ template <- sidescroller() %>%
         - slide_multipanel
 
 
+
     - The `slide_*` functions are wrappers around the `slide()` function that are opinionated and designed to facilitate the generation of presentations with the least friction.
+    
     - For example, the slides we are currently going through are an example of using `slide_multipanel()`.
     ",style = "width: 600px"),
 
@@ -146,6 +148,7 @@ template <- sidescroller() %>%
     ", style = "width: 700px")
   ) %>%
   
+  
   slide_markdown(
     title = "Saving the presentation","
     In order to save the presenation, use `save_sidescroller()`, which is a wrapper around `save_html()` from `htmltools`.
@@ -156,14 +159,21 @@ template <- sidescroller() %>%
     ```
     ",  style="background-color: #d7d8d2;") %>% 
   
-  
+  slide_markdown(
+    title = "Widgets","
+    
+    ```{r}
+    library(leaflet)
+    leaflet() %>% addTiles() %>% setView(-93.65, 42.0285, zoom = 17)
+    ```
+    ") %>% 
   ####  Secret sauce
   slide_wide_markdown(
     title = "Secret Sauce","
     The power of {sidescroller} comes from [slick.js](http://kenwheeler.github.io/slick) by [Ken Wheeler](https://kenwheeler.github.io) combined with some custom jquery and css code.
 
     Many thanks to Ken for developing the image carousel library and making it so flexible.
-    ")
+    ",  style="background-color: #d7d8d2;")
   
 
 save_sidescroller(template,
