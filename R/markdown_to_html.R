@@ -9,7 +9,7 @@
 markdown_to_html <- function(x){
   stopifnot(is.character(x))
 
-  temp_md <- tempfile(fileext = ".md")
+  temp_md <- tempfile(fileext = ".Rmd")
   temp_html <- tempfile(fileext = ".html")
   content <- left_justify(strsplit(x,"\\n")[[1]])
 
@@ -28,7 +28,7 @@ markdown_to_html <- function(x){
       html_nodes(".main-container>:not(#header)") %>%
       as.character %>%
       paste(collapse="")
-
+    
     unlink(temp_md)
     unlink(temp_html)
 

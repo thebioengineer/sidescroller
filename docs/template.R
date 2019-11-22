@@ -87,7 +87,7 @@ template <- sidescroller() %>%
 
     - `slide_markdown()` is for creating the slide contents by writing in markdown to get around needing to have knowledge of html.
         - Since most `R` users are comfortable writing markdown from the `rmarkdown` and `xaringan` packages, this is a natural way to make slide creation.
-        - Keep in mind that the contents are expected as markdown, not RMS and thus will not render supplied code.
+        - Contents can be interpreted as an rmarkdown document and thus will try to render supplied code within the code chunks.
     ",style = "width: 600px"),
 
     #### slide wide
@@ -148,7 +148,6 @@ template <- sidescroller() %>%
     ", style = "width: 700px")
   ) %>%
   
-  
   slide_markdown(
     title = "Saving the presentation","
     In order to save the presenation, use `save_sidescroller()`, which is a wrapper around `save_html()` from `htmltools`.
@@ -157,16 +156,43 @@ template <- sidescroller() %>%
     save_sidescroller(pres,\"my_presentation.html\")
     
     ```
-    ",  style="background-color: #d7d8d2;") %>% 
+    
+    Now, to view your new presentation, you can either double click on the newly generated HTML file.
+    
+    Alternately, using RStudio, you can view your presentation in the viewer:
+    
+    ```
+    rstudioapi::viewer(\"my_presentation.html\")
+    ```
+    
+    ",  style="background-color: #d7d8d2;width:900px") %>% 
+  
+  slide_markdown(
+    title = "R and Markdown",
+    "
+    Rmarkdown syntax can be used!
+    
+    For example, below I will generate a plot using the following code:
+    
+    ```{r}
+    
+    plot(mtcars$disp,mtcars$mpg)
+    ```
+    
+    "
+  ) %>% 
   
   slide_markdown(
     title = "Widgets","
+    
+    HTML Widgets are not currently supported as their HTML needs to be configured to operate properly. This is a work in progress.
     
     ```{r}
     library(leaflet)
     leaflet() %>% addTiles() %>% setView(-93.65, 42.0285, zoom = 17)
     ```
-    ") %>% 
+    ") %>%  
+  
   ####  Secret sauce
   slide_wide_markdown(
     title = "Secret Sauce","
