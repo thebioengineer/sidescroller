@@ -2,8 +2,15 @@
 <html>
 <head>
 <meta charset="utf-8"/>
-<script src="lib/jquery-1.11.0/jquery-1.11.0.min.js"></script>
-<script src="lib/jquery-1.11.0/jquery-migrate-1.2.1.min.js"></script>
+<script src="lib/htmlwidgets-1.3/htmlwidgets.js"></script>
+<script src="lib/jquery-1.12.4/jquery.min.js"></script>
+<link href="lib/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="lib/leaflet-1.3.1/leaflet.js"></script>
+<link href="lib/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="lib/Proj4Leaflet-1.0.1/proj4-compressed.js"></script>
+<script src="lib/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="lib/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="lib/leaflet-binding-2.0.2/leaflet.js"></script>
 <link href="lib/sidescroll-1.0.0/sidescroll.css" rel="stylesheet" />
 <script src="lib/sidescroll-1.0.0/sidescroll.js"></script>
 <link href="lib/slick-1.8.1/slick.css" rel="stylesheet" />
@@ -11,7 +18,7 @@
 <script src="lib/slick-1.8.1/slick.min.js"></script>
 
 </head>
-<body style="background-color:#313131;">
+<body style="background-color:#d7d8d2;;">
 <div class="slide_master_wrapper">
   <div class="slide_master">
     <div>
@@ -109,7 +116,7 @@ remotes::install_github("thebioengineer/sidescroller")</code></pre></div>
 <code>slide_markdown()</code> is for creating the slide contents by writing in markdown to get around needing to have knowledge of html.
 <ul>
 <li>Since most <code>R</code> users are comfortable writing markdown from the <code>rmarkdown</code> and <code>xaringan</code> packages, this is a natural way to make slide creation.</li>
-<li>Keep in mind that the contents are expected as markdown, not RMS and thus will not render supplied code.</li>
+<li>Contents can be interpreted as an rmarkdown document and thus will try to render supplied code within the code chunks.</li>
 </ul>
 </li>
 </ul>
@@ -206,8 +213,34 @@ pres &lt;- slide_markdown(pres,title = "Slide 1", content = "Slide Content")</co
               <h1>Widgets</h1>
             </div>
           </div>
-          <div class="panel"><p>HTML Widgets are not currently supported as their HTML needs to be configured to operate properly. This is a work in progress.</p><pre class="r"><code>library(leaflet)
-leaflet() %&gt;% addTiles() %&gt;% setView(-93.65, 42.0285, zoom = 17)</code></pre><div id="htmlwidget-5c8f60f6005bd348cbce" style="width:672px;height:480px;" class="leaflet html-widget"></div><script type="application/json" data-for="htmlwidget-5c8f60f6005bd348cbce">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]}],"setView":[[42.0285,-93.65],17,[]]},"evals":[],"jsHooks":[]}</script></div>
+          <div class="panel"><p>
+HTML Widgets are not currently supported when they are content of markdown. Their HTML needs to be configured to operate properly.
+</p><p>
+At this moment, if you wanted a leaflet like below to show up:
+</p><pre class="r"><code>library(leaflet)
+leaflet() %&gt;% addTiles() %&gt;% setView(-93.65, 42.0285, zoom = 17)</code></pre><p>
+The code would need to live as an entry to the slide like below.
+</p><pre class="r"><code>slide(
+  title="Check out this map!",
+  leaflet() %&gt;% addTiles() %&gt;% setView(-93.65, 42.0285, zoom = 17)
+)</code></pre><p>
+The next slide is what that code looks like rendered. -&gt;
+</p></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="slide_container fit_content" style="visibility:hidden;width:1000px">
+        <div class="single_panel generic" id="generic">
+          <div class="single_panel_title_box title_box">
+            <div class="slide_title">
+              <h1>Check out this map!</h1>
+            </div>
+          </div>
+          <div class="panel">
+            <div id="htmlwidget-3ae3da8df8edd4d7c1ca" style="width:100%;height:400px;" class="leaflet html-widget"></div>
+            <script type="application/json" data-for="htmlwidget-3ae3da8df8edd4d7c1ca">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]}],"setView":[[42.0285,-93.65],17,[]]},"evals":[],"jsHooks":[]}</script>
+          </div>
         </div>
       </div>
     </div>
@@ -220,6 +253,21 @@ leaflet() %&gt;% addTiles() %&gt;% setView(-93.65, 42.0285, zoom = 17)</code></p
             </div>
           </div>
           <div class="panel"><p>The power of {sidescroller} comes from <a href="http://kenwheeler.github.io/slick">slick.js</a> by <a href="https://kenwheeler.github.io">Ken Wheeler</a> combined with some custom jquery and css code.</p><p>Many thanks to Ken for developing the image carousel library and making it so flexible.</p></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="slide_container fit_content" style="visibility:hidden;text-align: center;">
+        <div class="full_width single_panel generic" id="generic">
+          <div class="single_panel_title_box title_box"></div>
+          <div class="panel">
+            <div id="thank-you-for-your-consideration-and-review-of-this-project" class="section level1">
+<h1>Thank you for your consideration and review of this project</h1>
+<p>Please refer any suggestions you have to the github repo:</p>
+<p><a href="https://www.github.com/thebioengineer/sidescroller">here</a></p>
+</div>
+            <img src="https://publicdomainvectors.org/photos/Scroll5.png" style="width: 59%;position: relative;max-height: 300px;margin: auto;"/>
+          </div>
         </div>
       </div>
     </div>

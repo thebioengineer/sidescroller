@@ -36,6 +36,8 @@ body{
   top:0;bottom:0; /* vertical center */
   left:0;right:0; /* horizontal center */
   margin: auto;
+  box-shadow: 0 0 30px #888;
+
 }
 
 .slide_master_wrapper{
