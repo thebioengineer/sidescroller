@@ -11,26 +11,30 @@
 #' @export
 #' @examples 
 #' x <- sidescroller() %>% 
-#'     slide_base(h1("This is a new slide),br(),p("This is some slide contents"), background = "#111111")
+#'     slide_base(
+#'     h1("This is a new slide),
+#'     br(),
+#'     p("This is some slide contents"),
+#'     style = "background:#111111;")
 #' 
 
-slide_base <- function(x, ..., style = NULL, visibility = FALSE, slide_id = "generic", slide_class = "generic", container_class = "fit_content"){
+slide_base <- function(x, ..., style = NULL, visibility = FALSE, slide_id = NULL, slide_class = NULL, container_class = "fit_content"){
 
   stopifnot(is_sidescroller(x))
   
-  if(visibility){
-    slide_style <- "visibility:visible;"
-  }else{
-    slide_style <- "visibility:hidden;"
+  if ( visibility ) {
+    slide_visibility <- "visibility:visible;"
+  } else{
+    slide_visibility <- "visibility:hidden;"
   }
 
-  if(!is.null(style)){
-    slide_style <- paste0(slide_style, style)
-  }
 
   slide_contents <- div(
-    div(class=paste(c("slide_container",container_class),collapse=" "), style = slide_style,
-        div(class = paste(slide_class, collapse = " ") ,id= paste(slide_id, collapse = " "),
+    div(class = paste(c("slide_container",container_class),collapse = " "), 
+        style = style,
+        div(class = paste(c(slide_class,"generic"), collapse = " ") ,
+            id = slide_id,
+            style = slide_visibility,
             ...
         )
     )
