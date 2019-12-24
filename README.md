@@ -3,7 +3,9 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of sidescroll is to provide a unique way to generate slides through R and HTML. This is unlike a powerpoint presentation because it slowly scrolls through the slides, as if it were a story. The past slides can still be seen, providing context to the past while displaying the future.
+Ellis Hughes
+
+The goal of {sidescroller} is to provide a unique way to generate slides through R and HTML. This is unlike a powerpoint presentation because it slowly scrolls through the slides, as if it were a story. The past slides can still be seen, providing context to the past while displaying the future.
 
 ### Inspiration
 This library was inspired from the presentation I gave at the [R/Pharma conference in 2019](https://thebioengineer.github.io/post/2019-08-24-r-in-pharma/r_pharma_scharp_validation).
