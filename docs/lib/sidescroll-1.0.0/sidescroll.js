@@ -9,10 +9,15 @@ function doResize(event, el, ui) {
       ui.body.width / 1700
       );
 
-    translationY =  60 * Math.max(0, 0.9-scale) ;
+    //translationY =  60 * Math.max(0, 0.9-scale) ;
+    
+    //if(ui.body.height/1000 != scale){
+     // translationY = translationY/2
+    //}
 
     el.css({
-     transform: "translateY(-" + translationY + "%) " + "scale(" + scale + ") ",
+     top: "50%",
+     transform: "translateY(-50%) " + "scale(" + scale + ") ",
      position: "relative"
     });
 
@@ -32,7 +37,7 @@ $(document).ready(function(){
 			accessibility: true,
 			dots: true,
 			infinite: false,
-			speed: 300,
+			speed: 200,
 			slidesToShow: 1,
 			centerMode: true,
 			variableWidth: true,
@@ -62,8 +67,8 @@ $(document).ready(function(){
 
 
 	$('.slide_master').on('afterChange', function(event, slick, currentSlide, nextSlide){
-    var slide = $(".slick-current").find(".slide_container");
-    slide.css('visibility','visible');
+    var generic_slide = $(".slick-current").find(".slide_container").find(".generic");
+    generic_slide.css('visibility','visible');
   });
 
 });
