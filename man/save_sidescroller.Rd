@@ -4,7 +4,7 @@
 \alias{save_sidescroller}
 \title{Save the sidescroller object}
 \usage{
-save_sidescroller(x, file, background = "#313131", libdir = "lib")
+save_sidescroller(x, file, background = "#d7d8d2;", libdir = "lib")
 }
 \arguments{
 \item{file}{File to write content to}

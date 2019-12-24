@@ -37,7 +37,7 @@ $(document).ready(function(){
 			accessibility: true,
 			dots: true,
 			infinite: false,
-			speed: 200,
+			speed: 250,
 			slidesToShow: 1,
 			centerMode: true,
 			variableWidth: true,

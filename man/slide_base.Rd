@@ -4,9 +4,8 @@
 \alias{slide_base}
 \title{Generic Slide Creation}
 \usage{
-slide_base(x, ..., style = NULL, visibility = FALSE,
-  slide_id = "generic", slide_class = "generic",
-  container_class = "fit_content")
+slide_base(x, ..., style = NULL, visibility = FALSE, slide_id = NULL,
+  slide_class = NULL, container_class = "fit_content")
 }
 \arguments{
 \item{x}{a sidescroller object}
@@ -28,6 +27,10 @@ helper function for creating slides. Intended for use within other functions
 }
 \examples{
 x <- sidescroller() \%>\% 
-    slide_base(h1("This is a new slide),br(),p("This is some slide contents"), background = "#111111")
+    slide_base(
+    h1("This is a new slide),
+    br(),
+    p("This is some slide contents"),
+    style = "background:#111111;")
 
 }

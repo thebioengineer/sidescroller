@@ -2,10 +2,9 @@ library(sidescroller)
 library(here)
 
 template <- sidescroller() %>%
-
   #Title Slide
   title_slide(
-    title = "sidescroller",
+    title = "{sidescroller}",
     subtitle = c("Tell the Story"),
     text_align = "center"
   ) %>%
@@ -200,7 +199,7 @@ template <- sidescroller() %>%
       leaflet() %>% addTiles() %>% setView(-93.65, 42.0285, zoom = 17)
     )
     ```
-    The next slide is what that code looks like rendered. ->
+    The next slide is what that code looks like rendered.
     ")) %>%
   
   slide(

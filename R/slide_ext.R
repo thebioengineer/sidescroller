@@ -23,7 +23,7 @@ slide <- function(.x, title = NULL, ... , style = NULL){
     )
   }
   
-  slide_base(.x, slide_title, panel(...), style = style , slide_class = c("single_panel","generic"))
+  slide_base(.x, slide_title, panel(...), style = style , slide_class = "single_panel")
 }
 
 
@@ -58,7 +58,7 @@ slide_markdown <- function(.x, title = NULL, content,  ..., style = NULL){
     )
   }
   
-  slide_base(.x, slide_title, panel(markdown_to_html(content)), ..., style = style, slide_class = c("single_panel","generic"))
+  slide_base(.x, slide_title, panel(markdown_to_html(content)), ..., style = style, slide_class = "single_panel")
 }
 
 
@@ -88,7 +88,7 @@ slide_wide <- function(.x, title = NULL, ..., style = NULL){
     )
   }
   
-  slide_base(.x, slide_title, panel(...), slide_class = c("full_width", "single_panel","generic"), style = style)
+  slide_base(.x, slide_title, panel(...), slide_class = c("full_width", "single_panel"), style = style)
 }
 
 #' Slide made to fill entire screen
@@ -118,7 +118,7 @@ slide_wide_markdown <- function(.x, title = NULL, x, style = NULL){
     )
   }
   
-  slide_base(.x, slide_title, panel(markdown_to_html(x)), slide_class = c("full_width", "single_panel", "generic"), style = style)
+  slide_base(.x, slide_title, panel(markdown_to_html(x)), slide_class = c("full_width", "single_panel"), style = style)
 }
 
 #' Slide made up of multiple panels
@@ -164,10 +164,10 @@ slide_multipanel <- function(.x, title = NULL, ... , style = NULL, panel_style =
     })
   }
 
-  .x <- slide_base(.x, slide_title, panels[[1]] , slide_class = c("multi_panel","generic"), container_class = NULL , style = style )
+  .x <- slide_base(.x, slide_title, panels[[1]] , slide_class = c("multi_panel"), container_class = NULL , style = style )
 
   for( m_panel in panels[-1]){
-    .x <- slide_base(.x, m_panel , slide_class = c("multi_panel","generic") , container_class = NULL , style = style)
+    .x <- slide_base(.x, m_panel , slide_class = c("multi_panel") , container_class = NULL , style = style)
   }
 
   return(.x)
