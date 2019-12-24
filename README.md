@@ -12,7 +12,7 @@ I took what I learned and rolled it into this package to make things easier the 
 In addition, by abstracting my lessons, I was able to improve many aspects of the presentation quality, like keeping the ratio of the slides correct.
 
 I took the R/Pharma presentation and re-made it using this library.
-The code to generate the presentation can be found on [github](https://github.com/thebioengineer/R_in_Pharma_sidescroller), and through the magic of github pages, the presentation is live at[ ]https://thebioengineer.github.io/R_in_Pharma_sidescroller/](https://thebioengineer.github.io/R_in_Pharma_sidescroller/).
+The code to generate the presentation can be found on [github](https://github.com/thebioengineer/R_in_Pharma_sidescroller), and through the magic of github pages, the presentation is live at[https://thebioengineer.github.io/R_in_Pharma_sidescroller/](https://thebioengineer.github.io/R_in_Pharma_sidescroller/).
 
 ## Installation
 
