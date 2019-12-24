@@ -5,6 +5,15 @@
 
 The goal of sidescroll is to provide a unique way to generate slides through R and HTML. This is unlike a powerpoint presentation because it slowly scrolls through the slides, as if it were a story. The past slides can still be seen, providing context to the past while displaying the future.
 
+### Inspiration
+This library was inspired from the presentation I gave at the [R/Pharma conference in 2019](https://thebioengineer.github.io/post/2019-08-24-r-in-pharma/r_pharma_scharp_validation).
+Making this presentation took a lot of trial and error, and learning more about HTML/CSS and javascript than I expected. 
+I took what I learned and rolled it into this package to make things easier the next time around. 
+In addition, by abstracting my lessons, I was able to improve many aspects of the presentation quality, like keeping the ratio of the slides correct.
+
+I took the R/Pharma presentation and re-made it using this library.
+The code to generate the presentation can be found on [github](https://github.com/thebioengineer/R_in_Pharma_sidescroller), and through the magic of github pages, the presentation is live at[ ]https://thebioengineer.github.io/R_in_Pharma_sidescroller/](https://thebioengineer.github.io/R_in_Pharma_sidescroller/).
+
 ## Installation
 
 You can install the released version of sidescroll from [github](https://www.github.com/thebioengineer/sidescroller) with:
