@@ -163,7 +163,7 @@ template <- sidescroller() %>%
     rstudioapi::viewer(\"my_presentation.html\")
     ```
     
-    ",  style="background-color: #d7d8d2;width:900px") %>% 
+    ",  style = "background-color: #d7d8d2;width:900px") %>% 
   
   slide_markdown(
     title = "R and Markdown",
@@ -214,7 +214,7 @@ template <- sidescroller() %>%
     The power of {sidescroller} comes from [slick.js](http://kenwheeler.github.io/slick) by [Ken Wheeler](https://kenwheeler.github.io) combined with some custom jquery and css code.
 
     Many thanks to Ken for developing the image carousel library and making it so flexible.
-    ",  style="background-color: #d7d8d2;") %>% 
+    ",  style = "background-color: #d7d8d2;") %>% 
   
   slide_wide(
     title = NULL,
@@ -225,7 +225,7 @@ template <- sidescroller() %>%
     
     [here](https://www.github.com/thebioengineer/sidescroller)
     "),
-    img(src="https://publicdomainvectors.org/photos/Scroll5.png",
+    img(src = "https://publicdomainvectors.org/photos/Scroll5.png",
         style = "width: 59%;position: relative;max-height: 300px;margin: auto;"),
     style = "text-align: center;"
   )

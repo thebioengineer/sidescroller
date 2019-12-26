@@ -12,14 +12,15 @@ markdown_to_html <- function(x){
   temp_md <- tempfile(fileext = ".Rmd")
   temp_html <- tempfile(fileext = ".html")
   content <- left_justify(strsplit(x,"\\n")[[1]])
+  # content <- strsplit(x,"\\n")[[1]]
+  
+  writeLines(c("---","title: md_to_text","---",content),temp_md, sep = "\n")
 
-  writeLines(content,temp_md, sep = "\n")
-
-  quiet <- capture.output( pandoc_output <- try( suppressMessages(
+  quiet <- capture.output( {pandoc_output <- try( suppressMessages(
     rmarkdown::render(temp_md,temp_html,output_format = rmarkdown::html_document())
-    ), silent=TRUE))
+    ), silent = TRUE) })
 
-  if(inherits(pandoc_output,"try-error")){
+  if (inherits(pandoc_output,"try-error") ) {
     pandoc_output
     stop("Pandoc conversion error")
   }else{

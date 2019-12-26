@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8"/>
+<style>body{background-color:#d7d8d2;;}</style>
 <script src="lib/jquery-1.11.0/jquery-1.11.0.min.js"></script>
 <script src="lib/jquery-1.11.0/jquery-migrate-1.2.1.min.js"></script>
 <link href="lib/sidescroll-1.0.0/sidescroll.css" rel="stylesheet" />
@@ -11,12 +12,12 @@
 <script src="lib/slick-1.8.1/slick.min.js"></script>
 
 </head>
-<body style="background-color:#313131;">
+<body>
 <div class="slide_master_wrapper">
   <div class="slide_master">
     <div>
-      <div class="slide_container" style="visibility:visible;">
-        <div class="title_slide generic" id="generic">
+      <div class="slide_container fit_content" style="width:1600px">
+        <div class="title_slide generic" style="visibility:visible;">
           <div class="slide_title_container" style="text-align:left;">
             <h1 class="title_text" style="z-index:1000;">This is the title of my awesome presentation</h1>
             <p class="subtitle_text">Ellis Hughes</p>
@@ -26,62 +27,201 @@
       </div>
     </div>
     <div>
-      <div class="slide_container" style="visibility:hidden;">
-        <div class="generic" id="generic">
-          <p>Oh Hello, world</p>
+      <div class="slide_container fit_content">
+        <div class="single_panel generic" style="visibility:hidden;">
+          <div class="single_panel_title_box title_box"></div>
+          <div class="panel">
+            <p>Oh Hello, world</p>
+          </div>
         </div>
       </div>
     </div>
     <div>
-      <div class="slide_container" style="visibility:visible;">
-        <div class="generic" id="generic">
-          <p>This slide is by default visible due to `visibility = TRUE`</p>
-          <ol>
-            <li>Item 1</li>
-            <li>item 2</li>
-          </ol>
+      <div class="slide_container fit_content">
+        <div class="single_panel generic" style="visibility:hidden;">
+          <div class="single_panel_title_box title_box">
+            <div class="slide_title">
+              <h1>A now Visible Slide</h1>
+            </div>
+          </div>
+          <div class="panel">
+            <ol>
+              <li>Item 1</li>
+              <li>item 2</li>
+            </ol>
+          </div>
         </div>
       </div>
     </div>
     <div>
-      <div class="slide_container" style="visibility:hidden;">
-        <div class="generic" id="generic">
-          <img src="https://66.media.tumblr.com/ee3deb2caceaa59c3dd0f80f82a37beb/tumblr_mpsej2j5rW1qz8x31o1_500.gifv"/>
+      <div class="slide_container fit_content">
+        <div class="single_panel generic" style="visibility:hidden;">
+          <div class="single_panel_title_box title_box">
+            <div class="slide_title">
+              <h1>Example of an image</h1>
+            </div>
+          </div>
+          <div class="panel">
+            <img src="https://66.media.tumblr.com/ee3deb2caceaa59c3dd0f80f82a37beb/tumblr_mpsej2j5rW1qz8x31o1_500.gifv"/>
+          </div>
         </div>
       </div>
     </div>
     <div>
-      <div class="slide_container" style="visibility:hidden; background:gray;">
-        <div class="full_width generic" id="generic">
-          <div>
+      <div class="slide_container fit_content" style="background: gray;">
+        <div class="full_width single_panel generic" style="visibility:hidden;">
+          <div class="single_panel_title_box title_box">
             <div class="slide_title">
               <h1>This is a wide slide</h1>
             </div>
           </div>
-          <p>This slide will fill the width of the display</p>
-          <p>The purpose could be to clear out the past display, or stage before the next section.</p>
-          <p>To clarify the area of the slide, it is colored `gray`.</p>
+          <div class="panel">
+            <p>This slide will fill the width of the display</p>
+            <p>The purpose could be to clear out the past display, or stage before the next section.</p>
+            <p>To clarify the area of the slide, it is colored `gray`.</p>
+          </div>
         </div>
       </div>
     </div>
     <div>
-      <div class="slide_container" style="visibility:hidden;">
-        <div class="generic" id="generic">
-          <div><div id="new-slide-header" class="section level2">
-<h2>New slide header</h2>
-<p>Testing the markdown</p>
-<ol style="list-style-type: decimal">
-<li>making</li>
-</ol>
+      <div class="slide_container fit_content">
+        <div class="single_panel generic" style="visibility:hidden;">
+          <div class="single_panel_title_box title_box">
+            <div class="slide_title">
+              <h1>Markdown Slide</h1>
+            </div>
+          </div>
+          <div class="panel"><p>Testing the markdown</p><ol style="list-style-type: decimal">
+<li>making
 <ul>
-<li><p>a list</p></li>
-<li><p>is easy in markdown</p></li>
-<li><p>but</p></li>
+<li>a list</li>
+<li>is easy in markdown</li>
+<li>but</li>
 </ul>
-<ol start="2" style="list-style-type: decimal">
-<li>will it render??</li>
+</li>
+<li>will it render??</li>
 </ol>
-<p>Because I like <a href="https://www.google.com">links</a>!</p>
+<p>Because I like <a href="https://www.google.com">links</a>!</p></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="slide_container">
+        <div class="multi_panel generic" style="visibility:hidden;">
+          <div class="multi_panel_title_box title_box">
+            <div class="slide_title">
+              <h1>Multi-Panel Slide</h1>
+            </div>
+          </div>
+          <div class="panel">
+            <p>Contents 1</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/58/Fun._band.jpg"/>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="slide_container">
+        <div class="multi_panel generic" style="visibility:hidden;">
+          <div class="panel">
+            <img src="https://imgs.xkcd.com/comics/frequentists_vs_bayesians.png"/>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="slide_container">
+        <div class="multi_panel generic" style="visibility:hidden;">
+          <div class="panel"><p>markdown_to_html() also works here Isn’t that <em>cool</em>? - This enables you to: - make a point - and progress through the - story to maintaing continuity</p><pre class="r"><code>print("Hello World")</code></pre><pre><code>## [1] "Hello World"</code></pre></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="slide_container fit_content">
+        <div class="single_panel generic" style="visibility:hidden;">
+          <div class="single_panel_title_box title_box">
+            <div class="slide_title">
+              <h1>Super long title. like how is it soooo long. holy cow. when will it loop back??</h1>
+            </div>
+          </div>
+          <div class="panel"><p>Lorem markdownum credas posset illa solvit, circumspice funesta fixa iacebat nomine, nisi ferae. Parvo ramis rudi summaque <em>nova</em>, nam et est celate, sed, haerent tellus nymphae sua. Cecidit adstitit est <a href="http://www.primo.net/diva-sua.html">Romam defixa</a> iam Bybli sub natalis herbis. Praeceps pectus longum iacit et quin vagantem pocula suspirat oblectamina caput censu dat quid dixerat fera. Oraque exul.</p><ol style="list-style-type: decimal">
+<li>Inattenuata mater</li>
+<li>Habebat templa perquirere cornua</li>
+<li>Non Erinys dumque Melas tantum potens suam</li>
+<li>Erit natus circumlita contigit incertas via oras</li>
+<li>Canori me tonitrus dabat rastrique inque nox</li>
+<li>Frena spoliata dubitaret similis hostem frustraque non</li>
+</ol></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="slide_container" style="background: coral;">
+        <div class="multi_panel generic" style="visibility:hidden;">
+          <div class="multi_panel_title_box title_box">
+            <div class="slide_title">
+              <h1>Multi-Panel Slide with a title that goes on and on my fiends. It is a title that never ends. On and on it goes. where it stops, who knows?</h1>
+            </div>
+          </div>
+          <div class="panel" style="margin-top: 120px;">
+            <p>Contents 1</p>
+            <div id="table-for-two" class="section level2">
+<h2>Table for two</h2>
+<table>
+<tr>
+<th>
+ID
+</th>
+<th>
+Name
+</th>
+<th>
+Rank
+</th>
+</tr>
+<tr>
+<td>
+1
+</td>
+<td>
+Tom Preston-Werner
+</td>
+<td>
+Awesome
+</td>
+</tr>
+<tr>
+<td>
+2
+</td>
+<td>
+Albert Einstein
+</td>
+<td>
+Nearly as awesome
+</td>
+</tr>
+</table>
+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="slide_container" style="background: coral;">
+        <div class="multi_panel generic" style="visibility:hidden;">
+          <div class="panel" style="margin-top: 120px;">
+            <img src="https://devopedia.org/images/article/172/7316.1561043304.png"/>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="slide_container" style="background: coral;">
+        <div class="multi_panel generic" style="visibility:hidden;">
+          <div class="panel" style="margin-top: 120px;"><div id="math-is-hard-lets-go-shopping" class="section level2">
+<h2>Math is hard, let’s go shopping</h2>
+<p>In first grade I learned that 5 &gt; 3 and 2 &lt; 7. Maybe some arrows. 1 -&gt; 2 -&gt; 3. 9 &lt;- 8 &lt;- 7. Triangles man! a^2 + b^2 = c^2</p>
 </div></div>
         </div>
       </div>
