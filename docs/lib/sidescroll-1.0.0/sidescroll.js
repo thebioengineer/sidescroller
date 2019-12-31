@@ -22,7 +22,6 @@ function doResize(event, el, ui) {
     el.css({
      top: topPerc + "%",
      transform: "translateY(-" + translationY + "%) " + "scale(" + scale + ") ",
-     '-webkit-transform': "translateY(-" + translationY + "%) " + "scale(" + scale + ") ",
      position: "relative"
     });
 
