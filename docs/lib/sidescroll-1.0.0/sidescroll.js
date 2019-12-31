@@ -1,23 +1,27 @@
 
+var isMobile;
+
 function doResize(event, el, ui) {
 
     var scale;
-    var translationY;
+    var translationY = 50;
+    var topPerc = 50;
+
 
     scale =   Math.min(
       ui.body.height / 1000 ,
       ui.body.width / 1700
       );
-
-    //translationY =  60 * Math.max(0, 0.9-scale) ;
+      
+    // Mobile vs Desktop and vertically alligned
+    if( isMobile & ui.body.height > ui.body.width){
+      topPerc = 0;
+      translationY = 100;
+    }
     
-    //if(ui.body.height/1000 != scale){
-     // translationY = translationY/2
-    //}
-
     el.css({
-     top: "50%",
-     transform: "translateY(-50%) " + "scale(" + scale + ") ",
+     top: topPerc + "%",
+     transform: "translateY(-" + translationY + "%) " + "scale(" + scale + ") ",
      position: "relative"
     });
 
@@ -33,6 +37,12 @@ function set_slide_container_size(event,el,ui){
 
 
 $(document).ready(function(){
+  
+    // make swipable if mobile/touch screen
+    // from https://stackoverflow.com/questions/11381673/detecting-a-mobile-browser
+    var touchDevice = (navigator.maxTouchPoints || 'ontouchstart' in document.documentElement);
+    isMobile = /iPhone|iPod|Android/i.test(navigator.userAgent);
+
 		$('.slide_master').slick({
 			accessibility: true,
 			dots: true,
@@ -41,7 +51,8 @@ $(document).ready(function(){
 			slidesToShow: 1,
 			centerMode: true,
 			variableWidth: true,
-			swipe: false
+			swipe: touchDevice,
+			arrows: !touchDevice
 			});
 
 		var $slide_wrapper = $(".slide_master_wrapper");

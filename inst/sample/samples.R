@@ -1,4 +1,5 @@
 library(sidescroller)
+library(here)
 
 example_scroller <- sidescroller() %>%
 
@@ -6,7 +7,7 @@ example_scroller <- sidescroller() %>%
     title = "This is the title of my awesome presentation",
     subtitle = c("Ellis Hughes","11/17/2019"),
     text_align = "left"
-  )%>%
+  ) %>%
 
   slide(
     title = NULL,
@@ -37,6 +38,7 @@ example_scroller <- sidescroller() %>%
   slide_markdown(
     title = "Markdown Slide",
     "Testing the markdown
+    
      1. making
          - a list
          - is easy in markdown
@@ -50,7 +52,7 @@ example_scroller <- sidescroller() %>%
     title = "Multi-Panel Slide",
     panel(
       p("Contents 1"),
-      img(src= "https://upload.wikimedia.org/wikipedia/commons/5/58/Fun._band.jpg")
+      img(src = "https://upload.wikimedia.org/wikipedia/commons/5/58/Fun._band.jpg")
       ),
     panel(img(src = "https://imgs.xkcd.com/comics/frequentists_vs_bayesians.png")),
     panel_markdown(
@@ -116,9 +118,11 @@ censu dat quid dixerat fera. Oraque exul.
     panel_style = "margin-top: 120px;"
   )
 
-temp_html <- tempfile(fileext = ".html")
+temp_html <- here::here("inst/sample/example_scroller.html")
 
-save_sidescroller(example_scroller,temp_html)
+save_sidescroller(example_scroller,
+                  temp_html)
+
 rstudioapi::viewer(temp_html)
 
 

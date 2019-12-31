@@ -17,6 +17,7 @@ body{
 }
 
 .fit_content {
+  max-width:1600px;
 }
 
 .slide_container img {
@@ -137,6 +138,8 @@ h1, h2, h3, h4, h5, h6, h7 {
 
 .single_panel .panel{
     margin-top: 0;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .panel p{

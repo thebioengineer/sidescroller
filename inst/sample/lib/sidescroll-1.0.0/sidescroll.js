@@ -1,17 +1,26 @@
 
+var isMobile;
+
 function doResize(event, el, ui) {
 
     var scale;
-    var translationY;
+    var translationY = 50;
+    var topPerc = 50;
+
 
     scale =   Math.min(
       ui.body.height / 1000 ,
       ui.body.width / 1700
       );
-
-    translationY =  60 * Math.max(0, 0.9-scale) ;
-
+      
+    // Mobile vs Desktop and vertically alligned
+    if( isMobile & ui.body.height > ui.body.width){
+      topPerc = 0;
+      translationY = 100;
+    }
+    
     el.css({
+     top: topPerc + "%",
      transform: "translateY(-" + translationY + "%) " + "scale(" + scale + ") ",
      position: "relative"
     });
@@ -28,14 +37,22 @@ function set_slide_container_size(event,el,ui){
 
 
 $(document).ready(function(){
+  
+    // make swipable if mobile/touch screen
+    // from https://stackoverflow.com/questions/11381673/detecting-a-mobile-browser
+    var touchDevice = (navigator.maxTouchPoints || 'ontouchstart' in document.documentElement);
+    isMobile = /iPhone|iPod|Android/i.test(navigator.userAgent);
+
 		$('.slide_master').slick({
 			accessibility: true,
 			dots: true,
 			infinite: false,
-			speed: 300,
+			speed: 250,
 			slidesToShow: 1,
 			centerMode: true,
-			variableWidth: true
+			variableWidth: true,
+			swipe: touchDevice,
+			arrows: !touchDevice
 			});
 
 		var $slide_wrapper = $(".slide_master_wrapper");
@@ -61,9 +78,8 @@ $(document).ready(function(){
 
 
 	$('.slide_master').on('afterChange', function(event, slick, currentSlide, nextSlide){
-    console.log("Viz Me!");
-    var slide = $(".slick-current").find(".slide_container");
-    slide.css('visibility','visible');
+    var generic_slide = $(".slick-current").find(".slide_container").find(".generic");
+    generic_slide.css('visibility','visible');
   });
 
 });
@@ -89,26 +105,6 @@ $(window).resize(function() {
 		      width: window.innerWidth
 		    }
 		});
-
-    //var idx = $(".slick-current").index();
-		//$('.slide_master').slick("unslick");
-		//window.setTimeout(function(){
-		//
-  	//	$('.slide_master').show(); // optionally
-  	//	//$('.slide_master').slick({
-  	//	//	accessibility: true,
-  	//	//	dots: true,
-  	//	//	infinite: false,
-  	//	//	speed: 300,
-  	//	//  slidesToShow: 1,
-  	//	//	centerMode: true,
-  	//	//	variableWidth: true,
-  	//	//  initialSlide: idx
-  	//	//});
-  	//
-    //
-    //
-    //}, 200); // can be changed to a lower value - whatever works
 });
 
 

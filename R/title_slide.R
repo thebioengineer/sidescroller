@@ -34,5 +34,5 @@ title_slide <- function(x, title = NULL, subtitle = NULL, ... , text_align=c("ce
     }
   }
 
-  slide_base(x, slide_title , ... , slide_class = c("title_slide"), visibility = TRUE, style = "width:1600px")
+  slide_base(x, slide_title , ... , slide_class = c("title_slide"), visibility = TRUE)
 }
