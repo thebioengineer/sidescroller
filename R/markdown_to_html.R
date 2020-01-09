@@ -9,8 +9,8 @@
 markdown_to_html <- function(x){
   stopifnot(is.character(x))
 
-  temp_md <- tempfile(fileext = ".Rmd")
-  temp_html <- tempfile(fileext = ".html")
+  temp_md <- tempfile(tmpdir = ".",fileext = ".Rmd")
+  temp_html <- tempfile(tmpdir = ".",fileext = ".html")
   content <- left_justify(strsplit(x,"\\n")[[1]])
   # content <- strsplit(x,"\\n")[[1]]
   
