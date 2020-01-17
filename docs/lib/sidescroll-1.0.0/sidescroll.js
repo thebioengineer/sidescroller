@@ -14,23 +14,26 @@ function doResize(event, el, ui) {
       );
       
     // Mobile vs Desktop and vertically alligned
-    if( isMobile & ui.body.height > ui.body.width){
-      topPerc = 0;
-      translationY = 100;
-    }
+    //if( isMobile & ui.body.height > ui.body.width){
+    //  topPerc = 0;
+    //  translationY = 100;
+    //}
     
     el.css({
      top: topPerc + "%",
-     transform: "translateY(-" + translationY + "%) " + "scale(" + scale + ") ",
-     position: "relative"
-    });
+     left: "50%", 
+     transform: "translate(-" + translationY + "% , -50%) " + "scale(" + scale + ") ",
+     //position: "absolute",
+     //display: "block"//,
+     //width: "100vw"
+     });
 
 }
 
 function set_slide_container_size(event,el,ui){
   el.css({
-    height: ui.body.height * 0.98, /* make a scoche smaller than the body */
-    width: ui.body.width * 0.98,
+    height: ui.body.height, /* make a scoche smaller than the body */
+    width: ui.body.width,
     margin: "auto"
   });
 }
