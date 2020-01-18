@@ -105,7 +105,8 @@ $(document).ready(function(){
       $('.slide_master').slick('slickPrev');
   });
 
-  
+  $.mobile.loading().hide();
+
 });
 
 
