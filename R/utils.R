@@ -4,7 +4,13 @@ sidescrollDependencies <- function(){
       "jquery",
       "1.11.0",
       system.file("htmlwidgets/jquery", package = "sidescroller"),
-      script = c("jquery-1.11.0.min.js","jquery-migrate-1.2.1.min.js")),
+      script = c("jquery-1.11.0.min.js",
+                 "jquery-migrate-1.2.1.min.js")),
+    htmlDependency(
+      "jquery_mobile",
+      "1.4.5",
+      system.file("htmlwidgets/jquery_mobile", package = "sidescroller"),
+      script = c("jquery.mobile-1.4.5.min.js")),
     htmlDependency(
       "sidescroll",
       "1.0.0",
@@ -18,7 +24,6 @@ sidescrollDependencies <- function(){
       script = c("slick.min.js"),
       stylesheet = c("slick.css","slick-theme.css"))
   )
-
 }
 
 #' Save the sidescroller object
