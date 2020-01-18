@@ -97,7 +97,6 @@ $(document).ready(function(){
   });
 
   $('.slide_master').on( "swipeleft", function(e){
-      console.log
       $('.slide_master').slick('slickNext');
   });
   
@@ -105,11 +104,8 @@ $(document).ready(function(){
       $('.slide_master').slick('slickPrev');
   });
 
-  $.mobile.loading().hide();
 
 });
-
-
 
 $(window).resize(function() {
   	var $slide_wrapper = $(".slide_master_wrapper");
