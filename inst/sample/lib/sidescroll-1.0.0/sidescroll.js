@@ -34,7 +34,7 @@ $(document).ready(function(){
   
     // make swipable if mobile/touch screen
     // from https://stackoverflow.com/questions/11381673/detecting-a-mobile-browser
-    var touchDevice = (navigator.maxTouchPoints || 'ontouchstart' in document.documentElement);
+    var touchDevice = (navigator.maxTouchPoints > 0 || 'ontouchstart' in document.documentElement);
     isMobile = /iPhone|iPod|iPad|Android/i.test(navigator.userAgent);
 
 		$('.slide_master').slick({
@@ -95,15 +95,16 @@ $(document).ready(function(){
       $('.slide_master').slick("slickPrev");
     }
   });
-  
-  if(isMobile){
-    $('.slide_master').on( "swipeleft", function(e){
+
+  $('.slide_master').on( "swipeleft", function(e){
+      console.log
       $('.slide_master').slick('slickNext');
-    });
-    $('.slide_master').on( "swiperight", function(e){
+  });
+  
+  $('.slide_master').on( "swiperight", function(e){
       $('.slide_master').slick('slickPrev');
-    });
-  }
+  });
+
   
 });
 
