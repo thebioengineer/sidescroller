@@ -225,8 +225,11 @@ template <- sidescroller() %>%
     
     [here](https://www.github.com/thebioengineer/sidescroller)
     "),
-    img(src = "https://publicdomainvectors.org/photos/Scroll5.png",
+    div(
+      img(src = "www/scroll.webp",
         style = "width: 59%;position: relative;max-height: 300px;margin: auto;"),
+      p("https://publicdomainvectors.org/photos/Scroll5.png",style = "font-size:10px")
+    ),
     style = "text-align: center;"
   )
   
