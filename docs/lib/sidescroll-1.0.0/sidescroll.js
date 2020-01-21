@@ -100,10 +100,10 @@ $(document).ready(function(){
     var code = (e.keyCode ? e.keyCode : e.which);
     console.log(e.which);
    
-    if (code === 32 | code === 39 | code === 40) {
+    if (code === 32 | code === 34 | code === 39 | code === 40) {
       $('.slide_master').slick('slickNext');
     }
-    if (code === 37 | code === 38){
+    if (code === 33 | code === 37 | code === 38){
       $('.slide_master').slick("slickPrev");
     }
   });
